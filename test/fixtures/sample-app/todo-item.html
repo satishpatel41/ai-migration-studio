@@ -1,0 +1,8 @@
+<template>
+  <li class="todo ${todo.done ? 'done' : ''}">
+    <input type="checkbox" checked.bind="todo.done">
+    <span if.bind="!editing" dblclick.trigger="toggleEdit()">${todo.text}</span>
+    <input if.bind="editing" type="text" value.bind="todo.text" blur.trigger="toggleEdit()">
+    <button click.delegate="remove()">x</button>
+  </li>
+</template>

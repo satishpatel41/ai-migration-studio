@@ -1,0 +1,37 @@
+{
+  "name": "ai-migration-studio",
+  "version": "0.1.0",
+  "description": "AI-assisted migration of Aurelia 1 apps to React + TypeScript hooks",
+  "type": "module",
+  "bin": {
+    "ams": "dist/cli.js"
+  },
+  "main": "dist/core/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "ams": "tsx src/cli.ts",
+    "studio": "tsx src/cli.ts studio"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "parse5": "^7.2.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.31",
+    "@types/supertest": "^6.0.2",
+    "react": "^18.3.1",
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.0",
+    "vitest": "^2.1.0"
+  }
+}

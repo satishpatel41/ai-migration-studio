@@ -1,0 +1,18 @@
+<template>
+  <require from="./todo-item"></require>
+  <require from="./app.css"></require>
+  <h1>${heading}</h1>
+  <form submit.delegate="addTodo()">
+    <input type="text" placeholder="What needs doing?" value.bind="newTodoText">
+    <button type="submit" disabled.bind="!newTodoText">Add</button>
+  </form>
+  <ul if.bind="todos.length > 0" class="todo-list">
+    <todo-item repeat.for="todo of todos" todo.bind="todo" remove.call="removeTodo(todo)"></todo-item>
+  </ul>
+  <p show.bind="todos.length === 0">Nothing to do yet.</p>
+  <span class="count ${remaining > 3 ? 'many' : ''}">${remaining | pluralize:'item'} left</span>
+  <select value.bind="filter">
+    <option value="all">All</option>
+    <option value="done">Done</option>
+  </select>
+</template>
